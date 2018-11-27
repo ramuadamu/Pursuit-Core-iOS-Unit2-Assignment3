@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,81 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Guess A Letter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FnR-SB-met">
+                                <rect key="frame" x="16" y="264" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter A Word" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lho-sc-aVi">
+                                <rect key="frame" x="16" y="226" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HANGMAN GAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKu-4L-h5j">
+                                <rect key="frame" x="16" y="151" width="343" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="euv-Ry-kuO">
+                                <rect key="frame" x="16" y="397" width="343" height="215"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rQ-LT-hq9">
+                                <rect key="frame" x="128" y="318" width="97" height="30"/>
+                                <state key="normal" title="New Game"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9W-ir-8EQ">
+                                <rect key="frame" x="11" y="197" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7rQ-LT-hq9" firstAttribute="top" secondItem="FnR-SB-met" secondAttribute="bottom" constant="24" id="1BY-uC-eYM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cKu-4L-h5j" secondAttribute="trailing" constant="16" id="2FN-0S-62F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lho-sc-aVi" secondAttribute="trailing" constant="16" id="8Hh-1L-q9C"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="euv-Ry-kuO" secondAttribute="trailing" constant="16" id="ABl-v6-pk3"/>
+                            <constraint firstItem="lho-sc-aVi" firstAttribute="top" secondItem="y9W-ir-8EQ" secondAttribute="bottom" constant="8" id="B10-ak-NIN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y9W-ir-8EQ" secondAttribute="trailing" constant="11" id="C3l-NW-m7j"/>
+                            <constraint firstItem="cKu-4L-h5j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="131" id="Iih-2Y-9tc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="euv-Ry-kuO" secondAttribute="bottom" constant="55" id="IsW-kt-Ldl"/>
+                            <constraint firstItem="y9W-ir-8EQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="11" id="JCd-ty-kFA"/>
+                            <constraint firstItem="euv-Ry-kuO" firstAttribute="top" secondItem="7rQ-LT-hq9" secondAttribute="bottom" constant="49" id="KaR-PO-Z4S"/>
+                            <constraint firstItem="y9W-ir-8EQ" firstAttribute="top" secondItem="cKu-4L-h5j" secondAttribute="bottom" constant="17" id="LUy-HC-MSa"/>
+                            <constraint firstItem="lho-sc-aVi" firstAttribute="top" secondItem="FnR-SB-met" secondAttribute="bottom" constant="-68" id="NKR-BA-xNp"/>
+                            <constraint firstItem="euv-Ry-kuO" firstAttribute="top" secondItem="7rQ-LT-hq9" secondAttribute="bottom" constant="49" id="UOs-1c-YAT"/>
+                            <constraint firstItem="lho-sc-aVi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ubu-Pt-fWA"/>
+                            <constraint firstItem="euv-Ry-kuO" firstAttribute="leading" secondItem="FnR-SB-met" secondAttribute="leading" id="Uzn-LH-GYv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7rQ-LT-hq9" secondAttribute="trailing" constant="150" id="VS6-tO-iI2"/>
+                            <constraint firstItem="euv-Ry-kuO" firstAttribute="top" secondItem="7rQ-LT-hq9" secondAttribute="bottom" constant="49" id="VoJ-VF-PbY"/>
+                            <constraint firstItem="FnR-SB-met" firstAttribute="top" secondItem="cKu-4L-h5j" secondAttribute="bottom" constant="84" id="eel-jB-nrC"/>
+                            <constraint firstItem="FnR-SB-met" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hJm-bE-4zS"/>
+                            <constraint firstItem="7rQ-LT-hq9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="128" id="nUO-sI-fBd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FnR-SB-met" secondAttribute="trailing" constant="16" id="oYn-DC-0lG"/>
+                            <constraint firstItem="cKu-4L-h5j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="sFt-cn-Cfh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="NewGame" destination="7rQ-LT-hq9" id="foo-4x-HvY"/>
+                        <outlet property="hangmanImage" destination="euv-Ry-kuO" id="zB4-Oz-UdU"/>
+                        <outlet property="hiddenWord" destination="y9W-ir-8EQ" id="m5m-8t-BGc"/>
+                        <outlet property="playerOneInputTextField" destination="lho-sc-aVi" id="hWY-Fb-4Li"/>
+                        <outlet property="playerTwoInputTextField" destination="FnR-SB-met" id="9zs-M9-biH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="676" y="-869.41529235382313"/>
         </scene>
     </scenes>
 </document>
